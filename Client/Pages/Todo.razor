@@ -1,0 +1,42 @@
+﻿@page "/todo"
+
+<h1>Todo remaining (@todos.Count(todo => !todo.IsDone))</h1> <!-- counts todos and displays them as header -->
+<!-- iterates through todos, binds title and completion status-->
+
+<ul>
+    @foreach (var todo in todos)
+
+    {
+        <li>
+            <input type="checkbox" @bind="todo.IsDone" />
+            <input @bind="todo.Title" />
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newTodo" />
+
+<!-- creates the input box-->
+
+<button class="btn btn-primary" @onclick="AddTodo">Add todo</button>
+<!--creates the buttonm on click creates AddTodo-->
+
+
+@code {
+    private List<TodoItem>
+    todos = new();
+    // create list of TodoItem
+    private string newTodo;
+
+    private void AddTodo()
+    {
+    if (!string.IsNullOrWhiteSpace(newTodo))
+    // if newTodo(from placeholder) is not blank)
+    {
+    todos.Add(new TodoItem { Title = newTodo });
+    // add new todo item with title of placeholder input
+    newTodo = string.Empty;
+    //reset newTodo
+    }
+    }
+    }
