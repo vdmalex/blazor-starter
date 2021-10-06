@@ -6,6 +6,7 @@ webpage:
 https://purple-field-01944df10.azurestaticapps.net/
 
 Tutorials/links
+
 todo https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server
 
 build your first blazor app https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/intro
