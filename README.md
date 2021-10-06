@@ -1,3 +1,14 @@
+todo tutorial
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server
+
+A blazor webpage running on microsoft azure servers
+implemented input/output and todo list through different tutorials
+
+https://purple-field-01944df10.azurestaticapps.net/
+
+
+
+
 ![screenshot](img.png) 
 
 # Blazor Starter Application
