@@ -1,0 +1,159 @@
+﻿@page "/calc"
+
+<button class="btn btn-primary" @onclick="pressOne">1</button>
+<button class="btn btn-primary" @onclick="pressTwo">2</button>
+<button class="btn btn-primary" @onclick="pressThree">3</button>
+<button class="btn btn-primary" @onclick="pressFour">4</button>
+<button class="btn btn-primary" @onclick="pressFive">5</button>
+<button class="btn btn-primary" @onclick="pressSix">6</button>
+<button class="btn btn-primary" @onclick="pressSeven">7</button>
+<button class="btn btn-primary" @onclick="pressEight">8</button>
+<button class="btn btn-primary" @onclick="pressNine">9</button>
+<button class="btn btn-primary" @onclick="pressZero">0</button>
+<button class="btn btn-primary" @onclick="pressPlus">+</button>
+<button class="btn btn-primary" @onclick="pressMinus">-</button>
+<button class="btn btn-primary" @onclick="pressTimes">*</button>
+<button class="btn btn-primary" @onclick="pressDivide">/</button>
+<button class="btn btn-primary" @onclick="calculate">=</button>
+
+
+
+<p>Output: @OutputString </p>
+
+@code
+
+{
+    private char Operation { get; set; }
+    private string InputString { get; set; }
+
+    private string OutputString { get; set; }
+    private int Operand1 { get; set; }
+    private int Operand2 { get; set; }
+
+    private void pressOne()
+    {
+        InputString += 1;
+        OutputString = InputString;
+    }
+    private void pressTwo()
+    {
+        InputString += 2;
+        OutputString = InputString;
+
+    }
+    private void pressThree()
+    {
+        InputString += 3;
+        OutputString = InputString;
+
+    }
+    private void pressFour()
+    {
+        InputString += 4;
+        OutputString = InputString;
+
+    }
+    private void pressFive()
+    {
+        InputString += 5;
+        OutputString = InputString;
+
+    }
+    private void pressSix()
+    {
+        InputString += 6;
+        OutputString = InputString;
+
+    }
+    private void pressSeven()
+    {
+        InputString += 7;
+        OutputString = InputString;
+
+    }
+    private void pressEight()
+    {
+        InputString += 8;
+        OutputString = InputString;
+
+    }
+    private void pressNine()
+    {
+        InputString += 9;
+        OutputString = InputString;
+
+    }
+    private void pressZero()
+    {
+        InputString += 0;
+        OutputString = InputString;
+
+    }
+    private void pressPlus()
+    {
+        Operation = '+';
+        Operand1 = int.Parse(InputString);
+        InputString = "";
+    }
+    private void pressMinus()
+    {
+        Operation = '-';
+        Operand1 = int.Parse(InputString);
+        InputString = "";
+    }
+    private void pressTimes()
+    {
+        Operation = '*';
+        Operand1 = int.Parse(InputString);
+        InputString = "";
+    }
+    private void pressDivide()
+    {
+        Operation = '/';
+        Operand1 = int.Parse(InputString);
+        InputString = "";
+    }
+    private void DoProcessing()
+
+    {
+
+        double num = double.Parse(InputString);
+
+        num = num * 2;
+
+        OutputString = num.ToString();
+        InputString = num.ToString();
+
+
+    }
+
+    private void calculate()
+    {
+
+        Operand2 = int.Parse(InputString);
+        switch (Operation)
+        {
+            case '*':
+                OutputString = (Operand1 * Operand2).ToString();
+                break;
+            case '-':
+                OutputString = (Operand1 - Operand2).ToString();
+                break;
+            case '/':
+                OutputString = (Operand1 / Operand2).ToString();
+                // code block
+                break;
+            case '+':
+                OutputString = (Operand1 + Operand2).ToString();
+                break;
+
+        }
+
+
+
+
+
+        InputString ="";
+    }
+
+}
