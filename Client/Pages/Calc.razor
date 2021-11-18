@@ -1,34 +1,51 @@
 ﻿@page "/calc"
 
+<div>
+    <p> @OutputString </p>
+</div>
+<div>
+    <button class="btn btn-primary">&nbsp;</button>    <!-- with Non Breaking Space -->
+    <button class="btn btn-primary" @onclick="pressDivide">/</button>
+    <button class="btn btn-primary" @onclick="pressTimes">*</button>
+    <button class="btn btn-primary" @onclick="pressMinus">-</button>
+   
+</div>
+<div>
+    <button class="btn btn-primary" @onclick="pressSeven">7</button>
+    <button class="btn btn-primary" @onclick="pressEight">8</button>
+    <button class="btn btn-primary" @onclick="pressNine">9</button>
+
+</div>
+<div>
+    <button class="btn btn-primary" @onclick="pressFour">4</button>
+    <button class="btn btn-primary" @onclick="pressFive">5</button>
+    <button class="btn btn-primary" @onclick="pressSix">6</button>
+    <button class="btn btn-primary" @onclick="pressPlus">+</button>
+</div>
 <button class="btn btn-primary" @onclick="pressOne">1</button>
 <button class="btn btn-primary" @onclick="pressTwo">2</button>
 <button class="btn btn-primary" @onclick="pressThree">3</button>
-<button class="btn btn-primary" @onclick="pressFour">4</button>
-<button class="btn btn-primary" @onclick="pressFive">5</button>
-<button class="btn btn-primary" @onclick="pressSix">6</button>
-<button class="btn btn-primary" @onclick="pressSeven">7</button>
-<button class="btn btn-primary" @onclick="pressEight">8</button>
-<button class="btn btn-primary" @onclick="pressNine">9</button>
-<button class="btn btn-primary" @onclick="pressZero">0</button>
-<button class="btn btn-primary" @onclick="pressPlus">+</button>
-<button class="btn btn-primary" @onclick="pressMinus">-</button>
-<button class="btn btn-primary" @onclick="pressTimes">*</button>
-<button class="btn btn-primary" @onclick="pressDivide">/</button>
 <button class="btn btn-primary" @onclick="calculate">=</button>
+<div>
+ <button class="btn btn-primary" @onclick="pressZero">0</button>
+</div>
 
 
 
-<p>Output: @OutputString </p>
+
+
 
 @code
 
 {
-    private char Operation { get; set; }
-    private string InputString { get; set; }
+        private char Operation { get; set; }
+        private string InputString { get; set; }
 
-    private string OutputString { get; set; }
+        private string OutputString{ get; set; }
+
     private int Operand1 { get; set; }
     private int Operand2 { get; set; }
+
 
     private void pressOne()
     {
@@ -153,7 +170,7 @@
 
 
 
-        InputString ="";
+        InputString = "";
     }
 
 }
